@@ -13,14 +13,14 @@ var A01_RandomPoem;
     // console.log(subject);
     // console.log(predicate);
     // console.log(object);
-    debugger;
+    // debugger;
     for (let i = subject.length; i > 0; i--) {
         // console.log(i);
         console.log(getVerse(subject, predicate, object));
     }
     function getVerse(_subject, _predicate, _objects) {
         let randomNumber;
-        let output = "Voila";
+        let output = "";
         randomNumber = Math.floor(Math.random() * _subject.length);
         let randomSubject = _subject.splice(randomNumber, 1);
         randomNumber = Math.floor(Math.random() * _predicate.length);

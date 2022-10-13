@@ -20,7 +20,7 @@ let object: string [] = ["Blumen", "im Teich", "den Hummer", "in der Küche", "m
 // console.log(predicate);
 // console.log(object);
 
-debugger;
+// debugger;
 
 for (let i: number = subject.length; i > 0; i-- ) {
     // console.log(i);
@@ -37,7 +37,7 @@ console.log(getVerse(subject, predicate, object));
 function getVerse (_subject: string[], _predicate: string[], _objects: string[]): string {
 
     let randomNumber: number;
-    let output: string = "Voila"; 
+    let output: string = ""; 
 
 
     randomNumber = Math.floor(Math.random() * _subject.length); 
