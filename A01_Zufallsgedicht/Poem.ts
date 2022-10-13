@@ -1,4 +1,4 @@
-namespace A01_Zufallsgedicht {
+namespace A01_RandomPoem {
 
 /*
 Aufgabe: <A01_Zufallsgedicht>
@@ -10,17 +10,17 @@ Quellen: <Henning, Reck>
 
 
 
-let subject: string [] = ["Susi", "Harald", "Strolch", "Kim"];
+let subject: string [] = ["Susi", "Harald", "Strolch", "Kim", "Sarah", "Linda"];
 
-let predicate: string [] = ["malt", "fischt", "grillt", "lernt"];
+let predicate: string [] = ["malt", "fischt", "grillt", "lernt", "radelt", "putzt" ];
 
-let object: string [] = ["Blumen", "im Teich", "den Hummer", "kochen"];
+let object: string [] = ["Blumen", "im Teich", "den Hummer", "in der Küche", "mit dem Fahrrad", "die Dusche"];
 
 // console.log(subject);
 // console.log(predicate);
 // console.log(object);
 
-
+debugger;
 
 for (let i: number = subject.length; i > 0; i-- ) {
     // console.log(i);
@@ -36,25 +36,25 @@ console.log(getVerse(subject, predicate, object));
 
 function getVerse (_subject: string[], _predicate: string[], _objects: string[]): string {
 
-    let zufallsZahl: number;
-    let ausgabe: string = "Voila"; 
+    let randomNumber: number;
+    let output: string = "Voila"; 
 
 
-    zufallsZahl = Math.floor(Math.random() * _subject.length); 
-    let zufallSubject: string[] = _subject.splice(zufallsZahl, 1) ;
+    randomNumber = Math.floor(Math.random() * _subject.length); 
+    let randomSubject: string[] = _subject.splice(randomNumber, 1) ;
     
 
-    zufallsZahl = Math.floor(Math.random() * _predicate.length);
-    let zufallPredicate: string[] = _predicate.splice(zufallsZahl, 1) ;
+    randomNumber = Math.floor(Math.random() * _predicate.length);
+    let randomPredicate: string[] = _predicate.splice(randomNumber, 1) ;
 
 
-    zufallsZahl = Math.floor(Math.random() * _objects.length);
-    let zufallObject: string[] = _objects.splice(zufallsZahl, 1) ; 
+    randomNumber = Math.floor(Math.random() * _objects.length);
+    let randomObject: string[] = _objects.splice(randomNumber, 1) ; 
 
-    // console.log(zufallsZahl);
+    // console.log(randomNumber);
 
-    ausgabe = zufallSubject + " " + zufallPredicate + " " + zufallObject; 
-    return ausgabe ;
+    output = randomSubject + " " + randomPredicate + " " + randomObject; 
+    return output ;
 
 }
 
