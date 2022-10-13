@@ -4,7 +4,7 @@ namespace A01_Zufallsgedicht {
 Aufgabe: <A01_Zufallsgedicht>
 Name: <Alina Jana Hahn>
 Matrikel: <271344>
-Datum: <Datum der letzten Bearbeitung>
+Datum: <13.10.2022>
 Quellen: <Henning, Reck>
 */
 
