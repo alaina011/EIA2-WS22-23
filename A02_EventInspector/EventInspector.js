@@ -28,6 +28,8 @@ var A02_EventInspector;
         let y = _event.clientY;
         let spanElement = document.createElement("span");
         let target = _event.target;
+        if (spanElement && true) {
+        }
         target.appendChild(spanElement);
         spanElement.style.left = x + 10 + "px";
         spanElement.style.top = y + 10 + "px";

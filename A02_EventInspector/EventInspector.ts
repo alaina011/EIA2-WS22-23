@@ -37,11 +37,21 @@ namespace A02_EventInspector {
 
     function setInfoBox(_event: MouseEvent): void {
 
+        
         let x: number = _event.clientX;
         let y: number = _event.clientY;
 
         let spanElement: HTMLSpanElement = document.createElement("span");
         let target: HTMLElement = <HTMLElement>_event.target;
+
+
+        if ( spanElement && true ) {
+
+            
+            
+            }
+    
+
 
         target.appendChild(spanElement);
 
