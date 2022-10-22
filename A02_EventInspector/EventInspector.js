@@ -4,8 +4,8 @@ var A02_EventInspector;
     Aufgabe: <A02_EventInspector>
     Name: <Alina Jana Hahn>
     Matrikel: <271344>
-    Datum: <     >
-    Quellen: <    >
+    Datum: < 22.10.2022    >
+    Quellen: <  Dennis Grützmacher  >
     */
     // console.log("TS-Datei wird angezeigt")
     window.addEventListener("load", handleLoad);
@@ -24,12 +24,16 @@ var A02_EventInspector;
         document.addEventListener("customEvent", logInfo);
     }
     function setInfoBox(_event) {
+        if (document.querySelector("span") == null) {
+        }
+        else {
+            let oldSpanElement = document.querySelector("span");
+            oldSpanElement.remove();
+        }
         let x = _event.clientX;
         let y = _event.clientY;
         let spanElement = document.createElement("span");
         let target = _event.target;
-        if (spanElement && true) {
-        }
         target.appendChild(spanElement);
         spanElement.style.left = x + 10 + "px";
         spanElement.style.top = y + 10 + "px";

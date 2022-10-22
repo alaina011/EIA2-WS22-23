@@ -4,8 +4,8 @@ namespace A02_EventInspector {
     Aufgabe: <A02_EventInspector>
     Name: <Alina Jana Hahn>
     Matrikel: <271344>
-    Datum: <     >
-    Quellen: <    >
+    Datum: < 22.10.2022    >
+    Quellen: <  Dennis Grützmacher  >
     */
 
     // console.log("TS-Datei wird angezeigt")
@@ -37,20 +37,21 @@ namespace A02_EventInspector {
 
     function setInfoBox(_event: MouseEvent): void {
 
-        
+
+
+        if (document.querySelector("span") == null) {
+        }
+        else {
+            let oldSpanElement: HTMLElement = document.querySelector("span");
+            oldSpanElement.remove();
+        }
+
+
         let x: number = _event.clientX;
         let y: number = _event.clientY;
 
         let spanElement: HTMLSpanElement = document.createElement("span");
         let target: HTMLElement = <HTMLElement>_event.target;
-
-
-        if ( spanElement && true ) {
-
-            
-            
-            }
-    
 
 
         target.appendChild(spanElement);
