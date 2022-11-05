@@ -5,7 +5,7 @@ var A04_Einkaufsliste_Datenstruktur;
           Name: <Alina Jana Hahn>
           Matrikel: <271344>
           Datum: < 05.11.2022  >
-          Quellen: <   >
+          Quellen: < Nathan Haider  >
     */
     A04_Einkaufsliste_Datenstruktur.data = {
         entry: [
