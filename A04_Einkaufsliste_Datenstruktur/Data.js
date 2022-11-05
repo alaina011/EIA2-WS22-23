@@ -32,5 +32,6 @@ var A04_Einkaufsliste_Datenstruktur;
             }
         ]
     };
+    A04_Einkaufsliste_Datenstruktur.item = "";
 })(A04_Einkaufsliste_Datenstruktur || (A04_Einkaufsliste_Datenstruktur = {}));
 //# sourceMappingURL=Data.js.map

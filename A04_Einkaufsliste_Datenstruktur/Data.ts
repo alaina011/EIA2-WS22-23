@@ -29,25 +29,25 @@ namespace A04_Einkaufsliste_Datenstruktur {
 
             {
                 name: "Gurke",
-                amount: 2, 
+                amount: 2,
                 comment: "große Gurken",
                 check: true,
                 date: "20.10.2022"
             },
-            { 
-                name: "Milch", 
-                amount: 1, 
+            {
+                name: "Milch",
+                amount: 1,
                 comment: "Flasche",
                 check: false,
-                date: "5.09.2022" 
+                date: "5.09.2022"
             },
-                
-            { 
-                name: "Reis", 
-                amount: 4, 
+
+            {
+                name: "Reis",
+                amount: 4,
                 comment: "Tüten",
                 check: false,
-                date: "7.08.2022" 
+                date: "7.08.2022"
             }
 
         ]
@@ -56,7 +56,7 @@ namespace A04_Einkaufsliste_Datenstruktur {
     };
 
 
-
+    export let item: string = "";
 
 
 

@@ -49,11 +49,11 @@ h1 {
     font-size: medium;
 }
 
-.object {
+/* .object {
     font-size: large;
     position: absolute;
     left: 20px;
-}
+} */
 
 #amount {
     position: absolute;
@@ -119,7 +119,3 @@ ul {
     font-size: 18px;
 }
 
-.position {
-    top: 20px;
-    left: 20px;
-}

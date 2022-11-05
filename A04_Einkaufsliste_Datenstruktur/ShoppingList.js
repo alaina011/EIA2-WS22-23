@@ -8,7 +8,13 @@ var A04_Einkaufsliste_Datenstruktur;
        Quellen: < Nathan Haider >
        */
     window.addEventListener("load", handleLoad);
-    function handleLoad() {
+    let object;
+    let amount;
+    let date;
+    let comment;
+    let nextPurchase;
+    let amountItems = 0;
+    function handleLoad(_event) {
         let addButton = document.querySelector("#add");
         let deleteButton = document.querySelector(".trash");
         let checkButton = document.querySelector(".check");
@@ -21,38 +27,42 @@ var A04_Einkaufsliste_Datenstruktur;
     }
     function createList() {
     }
-    function addEntry() {
+    function addEntry(_event) {
         console.log("Eintrag hinzufügen");
         let list = document.querySelector(".list");
         let div = document.createElement("div");
         let label = document.createElement("label");
         let iconTrash = document.createElement("i");
         let iconChecked = document.createElement("input");
-        div.addEventListener("click", checkEntry);
-        iconTrash.addEventListener("click", deleteEntry);
-        div.classList.add("box");
-        iconTrash.innerHTML = '<i class="fa-solid fa-trash"> </i>';
-        iconTrash.classList.add("trash");
-        iconChecked.type = "checkbox";
-        iconChecked.classList.add("check");
         let inputValue = document.getElementById("input");
         let amountValue = document.getElementById("amount");
         let commentValue = document.getElementById("comment");
         let dateValue = document.getElementById("date");
+        div.addEventListener("click", checkEntry);
+        iconTrash.addEventListener("click", deleteEntry);
+        div.classList.add("box");
+        iconTrash.classList.add("trash");
+        iconChecked.classList.add("check");
+        iconTrash.innerHTML = '<i class="fa-solid fa-trash"> </i>';
+        iconChecked.type = "checkbox";
         label.innerHTML += inputValue.value + ", " + amountValue.value + ", " + commentValue.value + ", " + dateValue.value;
         label.append(iconChecked, iconTrash);
         div.append(label);
         list.append(div);
     }
-    function deleteEntry() {
+    function deleteEntry(_event) {
         console.log("Eintrag wird gelöscht");
         this.parentElement.parentElement.remove();
     }
-    function checkEntry() {
+    function checkEntry(_event) {
         console.log("Eintrag wird abgehakt");
-        let date = new Date();
+        let dateNow = new Date();
+        let day = dateNow.getDate();
+        let month = dateNow.getMonth();
+        let year = dateNow.getFullYear();
+        this.parentElement.innerHTML += day + month + year;
     }
-    function editEntry() {
+    function editEntry(_event) {
         console.log("Eintrag wird bearbeitet");
     }
 })(A04_Einkaufsliste_Datenstruktur || (A04_Einkaufsliste_Datenstruktur = {}));
