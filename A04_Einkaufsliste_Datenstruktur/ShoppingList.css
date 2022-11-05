@@ -1,0 +1,125 @@
+body {
+    background-color: bisque;
+    font-size: 17px;
+
+}
+
+#container {
+    width: 400px;
+    margin: 75px auto;
+    position: relative;
+
+}
+
+h1 {
+    position: relative;
+    text-align: center;
+    top: 15px;
+    margin-bottom: 120px;
+}
+
+.box {
+    position: relative;
+    width: 400px;
+    height: 100px;
+    border: 2px;
+    border-color: black;
+    border-style: solid;
+    background-color: rgb(255, 245, 233);
+    margin-top: 50px;
+}
+
+
+.check {
+    padding: 2px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    font-size: large;
+    position: absolute;
+    left: 20px;
+    top: 70px;
+
+}
+
+.trash {
+    position: absolute;
+    right: 20px;
+    top: 70px;
+    font-size: medium;
+}
+
+.object {
+    font-size: large;
+    position: absolute;
+    left: 20px;
+}
+
+#amount {
+    position: absolute;
+    top: 75px;
+    left: 190px;
+    height: 25px;
+    width: 80px;
+}
+
+#comment {
+    position: absolute;
+    top: 110px;
+    width: 220px;
+    height: 20px;
+
+}
+
+#add {
+    font-size: x-large;
+    padding: 2px 5px;
+    color: #b7b6b6;
+    border: none;
+    position: absolute;
+    top: 75px;
+    right: 0px;
+}
+
+#add:hover {
+    color: #000000;
+}
+
+#input {
+    position: absolute;
+    top: 75px;
+    width: 180px;
+    height: 25px;
+   
+}
+
+ul {
+    list-style: none;
+    position: relative;
+    left: -50px;
+}
+
+
+
+#date {
+    position: absolute;
+    top: 110px;
+    left: 230px;
+    height: 20px;
+
+}
+
+#edit {
+    position: absolute;
+    right: 0px;
+    top: 95px; 
+}
+
+#edit:hover {
+    font-size: 18px;
+}
+
+.position {
+    top: 20px;
+    left: 20px;
+}

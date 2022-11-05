@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingList</title>
+    <link rel="stylesheet" href="ShoppingList.css">
+    <script src="ShoppingList.js"> </script>
+    <script src="Data.js"></script>
+
+    <script src="https://kit.fontawesome.com/4287d81834.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="container">
+
+
+        <h1> Einkaufsliste </h1>
+
+
+        <input type="text" id="input" placeholder="Eintrag hinzufügen">
+        <input type="number" id="amount" placeholder="Menge">
+        <textarea id="comment" placeholder="zusätzliche Infos"></textarea>
+        <input type="date" id="date">
+
+
+        <button id="add"> + </button>
+        <p id="edit"> Edit</p>
+
+
+        <ul class="list">
+
+     <li>  <div class="box">
+            <p class="object">Gurke</p>
+            <p class="date"> zuletzt am 20.10</p>
+
+
+            
+            <i class="fa-solid fa-trash  trash"></i>
+
+        </div></li> 
+
+
+      
+
+    </ul>
+
+
+
+    <ul id="uList">
+        <li onclick="clickList(1)" class="open">Milk, 4, Pack, 17.10.2022<img onclick="removeList(1)" class="trash" src="assets/trash.png"> <img onclick="editElement(1)" class="trash" src="assets/edit.png">
+        </li>
+        <li onclick="clickList(2)" class="done">Eggs, 6, Pieces, 06.10.2022<img onclick="removeList(2)" class="trash" src="assets/trash.png"> <img onclick="editElement()" class="trash" src="assets/edit.png">
+        </li>
+    </ul>
+
+
+
+
+
+
+    </div>
+
+
+</body>
+
+</html>
