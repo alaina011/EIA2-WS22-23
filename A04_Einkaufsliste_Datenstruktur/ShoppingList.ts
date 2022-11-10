@@ -9,81 +9,112 @@ namespace A04_Einkaufsliste_Datenstruktur {
        */
     window.addEventListener("load", handleLoad);
 
-    let object: string;
-    let amount: number;
-    let date: string;
-    let comment: string;
-    let nextPurchase: string;
-    let amountItems: number = 0;
 
     function handleLoad(_event: Event): void {
+        console.log("handleLoad augerufen");
         let addButton: Element = document.querySelector("#add");
-        let deleteButton: Element = document.querySelector(".trash");
-        let checkButton: Element = document.querySelector(".check");
         let editButton: Element = document.querySelector("#edit");
 
 
         addButton.addEventListener("click", addEntry);
-        deleteButton.addEventListener("click", deleteEntry);
-        checkButton.addEventListener("click", checkEntry);
         editButton.addEventListener("click", editEntry);
 
-
-        createList();
-
+        dataList(data);
 
     }
 
+    function dataList(_data: Data): void {
 
-    function createList(): void {
+        let name: string;
+        let amount: number;
+        let comment: string;
+        let date: string;
+
+
+        for (let category in _data) {
+            //  console.log(category);
+
+            let items: Item[] = _data[category];
+            // console.log(items[2].name);
+
+            for (let index: number = 0; index < items.length; index++) {
+
+                name = items[index].name;
+                amount = items[index].amount;
+                comment = items[index].comment;
+                date = items[index].date;
+
+
+                let createDiv: HTMLElement = document.createElement("div");
+
+                createDiv.innerHTML = name + " " + amount + " " + comment + " " + date;
+                createDiv.classList.add("dataList");
+                document.body.appendChild(createDiv);
+
+
+            }
+
+           
+
+
+
+        }
 
     }
-
-
 
 
 
     function addEntry(_event: Event): void {
         console.log("Eintrag hinzufügen");
 
-        let list: HTMLElement = document.querySelector<HTMLElement>(".list");
-        let div: HTMLElement = document.createElement("div");
-        let label: HTMLElement = document.createElement("label");
-        let iconTrash: HTMLElement = document.createElement("i");
-        let iconChecked: HTMLInputElement = document.createElement("input");
 
         let inputValue: HTMLInputElement = <HTMLInputElement>document.getElementById("input");
         let amountValue: HTMLInputElement = <HTMLInputElement>document.getElementById("amount");
         let commentValue: HTMLInputElement = <HTMLInputElement>document.getElementById("comment");
         let dateValue: HTMLInputElement = <HTMLInputElement>document.getElementById("date");
-
-
-        div.addEventListener("click", checkEntry);
-        iconTrash.addEventListener("click", deleteEntry);
-
-        div.classList.add("box");
-        iconTrash.classList.add("trash");
-        iconChecked.classList.add("check");
-
-        iconTrash.innerHTML = '<i class="fa-solid fa-trash"> </i>';
-        iconChecked.type = "checkbox";
-
-
-
-        label.innerHTML += inputValue.value + ", " + amountValue.value + ", " + commentValue.value + ", " + dateValue.value;
-        label.append(iconChecked, iconTrash);
-
-        div.append(label);
-        list.append(div);
-
-
+        let i: Item = {
+            name: inputValue.value,
+            amount: +amountValue.value,
+            comment: commentValue.value,
+            check: false,
+            date: dateValue.value
+        };
+        addItem(i);
     }
 
 
 
+    function addItem(_element: Item): void {
+        console.log("Eintrag hinzufügen");
+
+        let div: HTMLElement = document.createElement("div");
+        div.classList.add("box");
+        let label: HTMLElement = document.createElement("label");
+        let date: HTMLElement = document.createElement("p");
+
+        let iconTrash: HTMLElement = document.createElement("i");
+        iconTrash.classList.add("trash");
+        iconTrash.innerHTML = '<i class="fa-solid fa-trash"> </i>';
+        iconTrash.addEventListener("click", deleteEntry);
+
+        let iconChecked: HTMLInputElement = document.createElement("input");
+        iconChecked.classList.add("check");
+        iconChecked.type = "checkbox";
+        iconChecked.addEventListener("change", checkEntry);
+
+        label.innerHTML += _element.name + ", " + _element.amount + ", " + _element.comment + ", ";
+        date.innerHTML += "Zuletzt gekauft am: " + _element.date;
+        date.classList.add("dateString");
+        div.append(iconChecked, iconTrash, label, date);
+
+        let list: HTMLElement = document.querySelector<HTMLElement>(".list");
+        list.append(div);
+    }
+
+
     function deleteEntry(_event: Event): void {
         console.log("Eintrag wird gelöscht");
-        this.parentElement.parentElement.remove();
+        this.parentElement.remove();
     }
 
     function checkEntry(_event: Event): void {
@@ -91,10 +122,11 @@ namespace A04_Einkaufsliste_Datenstruktur {
 
         let dateNow: Date = new Date();
         let day: number = dateNow.getDate();
-        let month: number = dateNow.getMonth();
+        let month: number = (dateNow.getMonth() + 1);
         let year: number = dateNow.getFullYear();
 
-        this.parentElement.innerHTML += day + month + year;
+        let dateString: string = `Zuletzt gekauft am: ${day}.${month}.${year}`;
+        this.parentElement.querySelector(".dateString").innerHTML = dateString;
 
     }
 
