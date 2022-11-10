@@ -5,7 +5,7 @@ var A05_Einkaufsliste_Client;
        Name: <Alina Jana Hahn>
        Matrikel: <271344>
        Datum: < >
-       Quellen: <  >
+       Quellen: <    , zusammengearbeitet mit Anna Wintermantel  >
        */
     window.addEventListener("load", handleLoad);
     async function handleLoad(_event) {

@@ -4,8 +4,8 @@ var A04_Einkaufsliste_Datenstruktur;
        Aufgabe: <A04_Einkaufsliste_Datenstruktur>
        Name: <Alina Jana Hahn>
        Matrikel: <271344>
-       Datum: < 5.11.2022  >
-       Quellen: < Nathan Haider >
+       Datum: < 10.11.2022  >
+       Quellen: < Nathan Haider, externe Hilfe von einem Kumpel>
        */
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
