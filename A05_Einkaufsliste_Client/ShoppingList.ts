@@ -26,7 +26,7 @@ namespace A05_Einkaufsliste_Client {
     async function handleLoad(_event: Event): Promise<void> {
         console.log("handleLoad augerufen");
 
-        let response: Response = await fetch("Data.json");
+        let response: Response = await fetch("https://alaina011.github.io/EIA2-WS22-23/A05_Einkaufsliste_Client/Data.json");
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
 

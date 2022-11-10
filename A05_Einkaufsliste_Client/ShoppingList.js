@@ -10,7 +10,7 @@ var A05_Einkaufsliste_Client;
     window.addEventListener("load", handleLoad);
     async function handleLoad(_event) {
         console.log("handleLoad augerufen");
-        let response = await fetch("Data.json");
+        let response = await fetch("https://alaina011.github.io/EIA2-WS22-23/A05_Einkaufsliste_Client/Data.json");
         let offer = await response.text();
         let data = JSON.parse(offer);
         let addButton = document.querySelector("#add");
