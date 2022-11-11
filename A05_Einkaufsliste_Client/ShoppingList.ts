@@ -37,12 +37,22 @@ namespace A05_Einkaufsliste_Client {
 
         addButton.addEventListener("click", addEntry);
         editButton.addEventListener("click", editEntry);
+        addButton.addEventListener("click", sendOrder);
 
         dataList(data);
 
     }
 
+    async function sendOrder(_event: Event): Promise<void> {
+        console.log("Eintrag versendet");
 
+        let form: HTMLFormElement = <HTMLFormElement>document.querySelector("form");
+        let formData: FormData = new FormData(form);
+        let query: URLSearchParams = new URLSearchParams(<any>formData);
+        await fetch("../ShoppingList.html?" + query.toString());
+        alert("Eintrag gesendet!");
+
+    }
 
 
     function dataList(_data: Data): void {

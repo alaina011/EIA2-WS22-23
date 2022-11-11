@@ -17,7 +17,16 @@ var A05_Einkaufsliste_Client;
         let editButton = document.querySelector("#edit");
         addButton.addEventListener("click", addEntry);
         editButton.addEventListener("click", editEntry);
+        addButton.addEventListener("click", sendOrder);
         dataList(data);
+    }
+    async function sendOrder(_event) {
+        console.log("Eintrag versendet");
+        let form = document.querySelector("form");
+        let formData = new FormData(form);
+        let query = new URLSearchParams(formData);
+        await fetch("../ShoppingList.html?" + query.toString());
+        alert("Eintrag gesendet!");
     }
     function dataList(_data) {
         let name;
