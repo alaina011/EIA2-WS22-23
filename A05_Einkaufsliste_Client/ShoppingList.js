@@ -25,7 +25,7 @@ var A05_Einkaufsliste_Client;
         let form = document.querySelector("form");
         let formData = new FormData(form);
         let query = new URLSearchParams(formData);
-        await fetch("../ShoppingList.html?" + query.toString());
+        await fetch("https://alaina011.github.io/EIA2-WS22-23/A05_Einkaufsliste_Client/ShoppingList.html?" + query.toString());
         alert("Eintrag gesendet!");
     }
     function dataList(_data) {

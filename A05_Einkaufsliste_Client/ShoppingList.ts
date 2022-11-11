@@ -49,7 +49,7 @@ namespace A05_Einkaufsliste_Client {
         let form: HTMLFormElement = <HTMLFormElement>document.querySelector("form");
         let formData: FormData = new FormData(form);
         let query: URLSearchParams = new URLSearchParams(<any>formData);
-        await fetch("../ShoppingList.html?" + query.toString());
+        await fetch("https://alaina011.github.io/EIA2-WS22-23/A05_Einkaufsliste_Client/ShoppingList.html?" + query.toString());
         alert("Eintrag gesendet!");
 
     }
