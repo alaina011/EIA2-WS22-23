@@ -31,7 +31,7 @@ namespace A06_Einkaufsliste_DatabaseServer {
     async function handleLoad(_event: Event): Promise<void> {
         console.log("handleLoad augerufen");
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/index.php/?command=find&collection=Data");
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/?command=find&collection=Data");
         let offer: string = await response.text();
         let data: Data = JSON.parse(offer);
 
@@ -65,23 +65,34 @@ namespace A06_Einkaufsliste_DatabaseServer {
 
         let query: URLSearchParams = new URLSearchParams();
         query.set("command", "insert");
-        query.set("collection", "Orders");
+        query.set("collection", "Data");
         query.set("data", JSON.stringify(json));
+        console.log(JSON.stringify(json));
 
 
-        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/index.php?" + query.toString());
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/?" + query.toString());
         console.log(response);
         alert("wurde versendet");
 
     }
 
 
-    function dataList(_data: Data): void {
+    async function dataList(_data: Data): Promise<void> {
 
         let name: string;
         let amount: number;
         let comment: string;
         let date: string;
+
+        let query: URLSearchParams = new URLSearchParams();
+        query.set("command", "find");
+        query.set("collection", "Orders");
+        query.toString();
+
+        
+        let response: Response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/?" + query.toString());
+        let offer: string = await response.text();
+        let entry: any = response.json; 
 
 
         for (let category in _data) {
@@ -162,6 +173,10 @@ namespace A06_Einkaufsliste_DatabaseServer {
 
         let list: HTMLElement = document.querySelector<HTMLElement>(".list");
         list.append(div);
+
+
+
+
     }
 
 

@@ -11,7 +11,7 @@ var A06_Einkaufsliste_DatabaseServer;
     let json = {};
     async function handleLoad(_event) {
         console.log("handleLoad augerufen");
-        let response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/index.php/?command=find&collection=Data");
+        let response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/?command=find&collection=Data");
         let offer = await response.text();
         let data = JSON.parse(offer);
         let addButton = document.querySelector("#add");
@@ -32,17 +32,25 @@ var A06_Einkaufsliste_DatabaseServer;
             }
         let query = new URLSearchParams();
         query.set("command", "insert");
-        query.set("collection", "Orders");
+        query.set("collection", "Data");
         query.set("data", JSON.stringify(json));
-        let response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/index.php?" + query.toString());
+        console.log(JSON.stringify(json));
+        let response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/?" + query.toString());
         console.log(response);
         alert("wurde versendet");
     }
-    function dataList(_data) {
+    async function dataList(_data) {
         let name;
         let amount;
         let comment;
         let date;
+        let query = new URLSearchParams();
+        query.set("command", "find");
+        query.set("collection", "Orders");
+        query.toString();
+        let response = await fetch("https://webuser.hs-furtwangen.de/~hahnalin/Server_Shoppinglist/?" + query.toString());
+        let offer = await response.text();
+        let entry = response.json;
         for (let category in _data) {
             //  console.log(category);
             let items = _data[category];
