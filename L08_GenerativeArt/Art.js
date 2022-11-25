@@ -4,8 +4,8 @@ var A08_GenerativeArt;
            Aufgabe: <A08.1_GenerativeArt>
            Name: <Alina Jana Hahn>
            Matrikel: <271344>
-           Datum: <>
-           Quellen: < >
+           Datum: <25.11.2022>
+           Quellen: <Pia Giovannelli, Jonas Atzenhofer, w3 schools, zusammengearbeitet mit Anna Wintermantel>
            */
     window.addEventListener("load", handleLoad);
     let crc2;
@@ -15,42 +15,40 @@ var A08_GenerativeArt;
         crc2 = canvas.getContext("2d");
         crc2.fillStyle = "#EFEDDE";
         crc2.fillRect(150, 50, crc2.canvas.width, crc2.canvas.height);
+        crc2.translate(140, 50);
         drawCircle();
-        drawTriangle();
         drawEllipse();
         drawLine();
     }
     function drawCircle() {
         let size = randomNumber(1, 150);
-        crc2.beginPath();
+        let circle = canvas.getContext("2d");
+        circle.fillStyle = "blue";
+        circle.strokeStyle = "blue";
         for (let i = 0; i < 10; i++) {
-            let x = Math.random() * crc2.canvas.width;
-            let y = Math.random() * crc2.canvas.height;
-            crc2.arc(x, y, size, 0, 2 * Math.PI);
+            let x = Math.random() * circle.canvas.width;
+            let y = Math.random() * circle.canvas.height;
+            circle.beginPath();
+            circle.arc(x, y, size, 0, 2 * Math.PI);
+            circle.fill();
+            circle.closePath();
+            circle.stroke();
         }
-        crc2.stroke();
-        crc2.fillStyle = color();
-    }
-    function drawTriangle() {
-        let point = randomNumber(5, 10);
-        crc2.beginPath();
-        // for (let i: number = 0; i < point; i++) {
-        //        let x: number = randomNumber(0, 150) - randomNumber(0, 150);
-        //        let y: number = randomNumber(0, 150) - randomNumber(0, 150);
-        //        crc2.lineTo(x, y);
-        // }
-        crc2.closePath();
-        crc2.stroke();
     }
     function drawEllipse() {
         let size = randomNumber(1, 150);
-        crc2.beginPath();
+        let ellipse = canvas.getContext("2d");
+        ellipse.fillStyle = "red";
+        ellipse.strokeStyle = "red";
         for (let i = 0; i < 10; i++) {
-            let x = Math.random() * crc2.canvas.width;
-            let y = Math.random() * crc2.canvas.height;
-            crc2.ellipse(x, y, size, 15, 5, 0, 360);
+            let x = Math.random() * ellipse.canvas.width;
+            let y = Math.random() * ellipse.canvas.height;
+            ellipse.beginPath();
+            ellipse.ellipse(x, y, size, 15, 5, 0, 360);
+            ellipse.fill();
+            ellipse.closePath();
+            ellipse.stroke();
         }
-        crc2.stroke();
     }
     function drawLine() {
         let color = ["grey", "#AFFF65", "#FF9F92"];
@@ -61,24 +59,16 @@ var A08_GenerativeArt;
                 let c = randomNumber(0, canvas.width);
                 let d = randomNumber(0, canvas.height);
                 crc2.beginPath();
-                crc2.strokeStyle = color[i];
                 crc2.moveTo(a, b);
                 crc2.lineTo(c, d);
                 crc2.stroke();
+                crc2.strokeStyle = color[i];
             }
     }
     function randomNumber(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min) + min);
-    }
-    function color() {
-        let letter = "0123456789ABCDEF";
-        let colorsign = "#";
-        for (let i = 0; i < 8; i++) {
-            colorsign += letter[Math.floor(Math.random() * 12)];
-        }
-        return colorsign;
     }
 })(A08_GenerativeArt || (A08_GenerativeArt = {}));
 //# sourceMappingURL=Art.js.map
