@@ -1,0 +1,49 @@
+body {
+    background-color: bisque;
+    position: absolute;
+}
+
+
+#food {
+    border-style: solid;
+    border-color: grey;
+    height: 50px;
+    width: 400px;
+    background-color: antiquewhite;
+    text-align: center;
+    position: relative;
+    left: 500px;
+    margin-top: 50px;
+    padding-top: 25px;
+    font-weight: 700;
+
+}
+
+#song {
+    border-style: solid;
+    border-color: grey;
+    height: 50px;
+    width: 400px;
+    background-color: antiquewhite;
+    position: relative;
+    left: 500px;
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 25px;
+    font-weight: 700;
+
+}
+
+
+#animals {
+    border-style: solid;
+    border-color: grey;
+    height: 300px;
+    width: 380px;
+    background-color: antiquewhite;
+    position: relative;
+    left: 500px;
+    margin-top: 20px;
+    padding-top: 25px;
+    padding-left: 20px;
+}
