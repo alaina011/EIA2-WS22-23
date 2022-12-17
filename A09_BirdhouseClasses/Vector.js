@@ -7,8 +7,10 @@ var A09_BirdhouseClasses;
             this.set(_x, _y);
         }
         set(_x, _y) {
-            this.x = _x;
-            this.y = _y;
+            let random1 = Math.floor(Math.random() * (1000 - 1) + 1);
+            let random2 = Math.floor(Math.random() * (700 - 1) + 1);
+            this.x = random1;
+            this.y = random2;
         }
         scale(_factor) {
             this.x *= _factor;
@@ -20,7 +22,7 @@ var A09_BirdhouseClasses;
         }
         random(_minLength, _maxLength) {
             let length = _minLength + Math.random() * (_maxLength - _minLength);
-            let direction = Math.random() * 2 * Math.PI;
+            let direction = 1;
             this.set(Math.cos(direction), Math.sin(direction));
             this.scale(length);
         }

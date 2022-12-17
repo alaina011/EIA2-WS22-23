@@ -31,6 +31,12 @@ var A09_BirdhouseClasses;
             let offset = new A09_BirdhouseClasses.Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.position.add(offset);
+            if (this.position.x < 0)
+                this.position.x += A09_BirdhouseClasses.crc2.canvas.width;
+            if (this.position.y < 0)
+                this.position.y += A09_BirdhouseClasses.crc2.canvas.height;
+            if (this.position.x > A09_BirdhouseClasses.crc2.canvas.width)
+                this.position.x -= A09_BirdhouseClasses.crc2.canvas.width;
             if (this.position.y > A09_BirdhouseClasses.crc2.canvas.height)
                 this.position.y -= A09_BirdhouseClasses.crc2.canvas.height;
         }

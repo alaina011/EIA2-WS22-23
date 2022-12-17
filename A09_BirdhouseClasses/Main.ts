@@ -21,12 +21,13 @@ namespace A09_BirdhouseClasses {
     export let crc2: CanvasRenderingContext2D;
 
     let horizont: number = 0.6;
-  
+
 
 
     let background: ImageData;
     let snowflakes: Snowflake[] = [];
     let birds: Bird[] = [];
+    // let standingBirds: Bird[] = [];
 
 
 
@@ -51,9 +52,14 @@ namespace A09_BirdhouseClasses {
         }
 
         for (let iBird: number = 0; iBird < 15; iBird++) {
-            let bird: Bird = new Bird( "brown");
+            let bird: Bird = new Bird("brown");
             birds.push(bird);
         }
+
+        // for (let iStanding: number = 0; iStanding < 5; iStanding++){
+        //     let standingBird: Bird = new Bird("black");
+        //     standingBirds.push(standingBird);
+        // }
     }
 
     function update(): void {
@@ -70,7 +76,56 @@ namespace A09_BirdhouseClasses {
             bird.moveFlying(1 / 200);
         }
 
+        // for (let standingBird of standingBirds) {
+        //     standingBird.drawStanding();
+        // }
+
+
     }
+    function drawStanding(): void {
+        console.log("draw standing ");
+
+        let x: number = randomNumber(0, canvas.width);
+        let y: number = randomNumber(600, 800);
+
+
+        crc2.save();
+        crc2.translate(x, y);
+
+        crc2.beginPath();
+        crc2.fillStyle = "black";
+        crc2.arc(0, 0, 10, 0, 2 * Math.PI);
+
+
+
+        // body
+        crc2.ellipse(-25, 20, 10, 25, 20, 0, 360);
+        crc2.moveTo(-30, 30);
+        crc2.lineTo(-30, 53);
+        crc2.moveTo(-25, 30);
+        crc2.lineTo(-25, 53);
+        crc2.fill();
+
+        // beak
+        crc2.moveTo(1, -5);
+        crc2.lineTo(20, -5);
+        crc2.lineTo(1, 2);
+
+
+        crc2.stroke();
+        crc2.strokeStyle = "black";
+        crc2.restore();
+
+    }
+
+    function randomNumber(min: number, max: number): number {
+
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min) + min);
+    }
+
+
 
 
     function drawBackground(): void {
@@ -105,6 +160,7 @@ namespace A09_BirdhouseClasses {
 
         drawSnowman({ x: 125, y: 740 });
 
+        drawStanding();
         background = crc2.getImageData(0, 0, crc2.canvas.width, crc2.canvas.height);
     }
 
