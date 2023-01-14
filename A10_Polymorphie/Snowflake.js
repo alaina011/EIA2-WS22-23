@@ -4,12 +4,12 @@ var A10_Polymorphie;
                  Aufgabe: <A10_Polymorphie>
                  Name: <Alina Jana Hahn>
                  Matrikel: <271344>
-                 Datum: < 12.01.2023 >
+                 Datum: < 14.01.2023 >
                  Quellen: <  >
                  */
     class Snowflake extends A10_Polymorphie.Moveable {
         draw() {
-            console.log("draw Snowflake");
+            // console.log("draw Snowflake");
             A10_Polymorphie.crc2.save();
             A10_Polymorphie.crc2.translate(this.position.x, this.position.y);
             A10_Polymorphie.crc2.beginPath();
@@ -19,7 +19,7 @@ var A10_Polymorphie;
             A10_Polymorphie.crc2.restore();
         }
         move(_timeslice) {
-            console.log("move Snowflake");
+            // console.log("move Snowflake");
             let offset = new A10_Polymorphie.Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.position.add(offset);

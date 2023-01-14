@@ -4,15 +4,15 @@ var A10_Polymorphie;
               Aufgabe: <A10_Polymorphie>
               Name: <Alina Jana Hahn>
               Matrikel: <271344>
-              Datum: < 12.01.2023 >
-              Quellen: <  >
+              Datum: < 14.01.2023 >
+              Quellen: < zusammen mit Anna Wintermantel >
               */
     window.addEventListener("load", handleLoad);
     let horizont = 0.6;
     let background;
     let moveObjects = [];
     function handleLoad() {
-        console.log("load");
+        // console.log("load");
         A10_Polymorphie.canvas = document.querySelector("canvas");
         A10_Polymorphie.crc2 = A10_Polymorphie.canvas.getContext("2d");
         drawBackground();
@@ -20,7 +20,7 @@ var A10_Polymorphie;
         setInterval(update, 20);
     }
     function createMoveObjects() {
-        console.log("create Snowflakes");
+        // console.log("create Snowflakes");
         for (let i = 0; i < 250; i++) {
             let snowflake = new A10_Polymorphie.Snowflake();
             moveObjects.push(snowflake);
@@ -35,7 +35,7 @@ var A10_Polymorphie;
         // }
     }
     function update() {
-        console.log("update");
+        // console.log("update");
         A10_Polymorphie.crc2.putImageData(background, 0, 0);
         for (let snowflake of moveObjects) {
             snowflake.move(1 / 50);
@@ -50,7 +50,7 @@ var A10_Polymorphie;
         // }
     }
     function drawStanding() {
-        console.log("draw standing ");
+        // console.log("draw standing ");
         let x = randomNumber(0, A10_Polymorphie.canvas.width);
         let y = randomNumber(600, 800);
         A10_Polymorphie.crc2.save();

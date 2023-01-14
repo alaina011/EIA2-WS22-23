@@ -4,7 +4,7 @@ var A10_Polymorphie;
                  Aufgabe: <A10 Polymorphie>
                  Name: <Alina Jana Hahn>
                  Matrikel: <271344>
-                 Datum: < 12.01.2023 >
+                 Datum: < 14.01.2023 >
                  Quellen: <   >
                  */
     class Bird extends A10_Polymorphie.Moveable {
@@ -15,7 +15,7 @@ var A10_Polymorphie;
             this.color = _color;
         }
         moveFlying(_timeslice) {
-            console.log("move Bird");
+            // console.log("move Bird");
             let offset = new A10_Polymorphie.Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.position.add(offset);
@@ -29,7 +29,7 @@ var A10_Polymorphie;
                 this.position.y -= A10_Polymorphie.crc2.canvas.height;
         }
         drawFlying() {
-            console.log("draw flying Bird");
+            // console.log("draw flying Bird");
             A10_Polymorphie.crc2.save();
             A10_Polymorphie.crc2.translate(this.position.x, this.position.y);
             A10_Polymorphie.crc2.beginPath();

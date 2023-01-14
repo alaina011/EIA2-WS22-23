@@ -4,7 +4,7 @@ var A10_Polymorphie;
                  Aufgabe: <A10_Polymorphie>
                  Name: <Alina Jana Hahn>
                  Matrikel: <271344>
-                 Datum: < 12.01.2023 >
+                 Datum: < 14.01.2023 >
                  Quellen: <  >
                  */
     class Moveable {
@@ -15,11 +15,9 @@ var A10_Polymorphie;
                 this.position = _position;
             }
             else {
-                this.position.x = A10_Polymorphie.randomNumber(0, 600);
-                this.position.y = A10_Polymorphie.randomNumber(0, 800);
+                this.position = new A10_Polymorphie.Vector(0, 0);
             }
-            this.velocity.x = A10_Polymorphie.randomNumber(100, 200);
-            this.velocity.y = A10_Polymorphie.randomNumber(100, 200);
+            this.velocity = new A10_Polymorphie.Vector(0, 0);
         }
         move(_timeslice) { }
         ;

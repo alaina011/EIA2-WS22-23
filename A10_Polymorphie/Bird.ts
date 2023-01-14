@@ -4,26 +4,27 @@ namespace A10_Polymorphie {
                  Aufgabe: <A10 Polymorphie>
                  Name: <Alina Jana Hahn>
                  Matrikel: <271344>
-                 Datum: < 12.01.2023 >
+                 Datum: < 14.01.2023 >
                  Quellen: <   >
                  */
 
 
     export class Bird extends Moveable {
         
+       
         type: string;
         color: string;
 
         constructor(_color: string) {
 
-            super();
+          super();
 
             this.color = _color;
 
         }
 
         moveFlying(_timeslice: number): void {
-            console.log("move Bird");
+            // console.log("move Bird");
 
             let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
@@ -42,7 +43,7 @@ namespace A10_Polymorphie {
 
 
         drawFlying(): void {
-            console.log("draw flying Bird");
+            // console.log("draw flying Bird");
 
             crc2.save();
             crc2.translate(this.position.x, this.position.y);

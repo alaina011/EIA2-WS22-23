@@ -4,19 +4,17 @@ namespace A10_Polymorphie {
                  Aufgabe: <A10_Polymorphie>
                  Name: <Alina Jana Hahn>
                  Matrikel: <271344>
-                 Datum: < 12.01.2023 >
+                 Datum: < 14.01.2023 >
                  Quellen: <  >
                  */
 
 
     export class Snowflake extends Moveable {
-       
-
 
 
 
         draw(): void {
-            console.log("draw Snowflake");
+            // console.log("draw Snowflake");
 
             crc2.save();
             crc2.translate(this.position.x, this.position.y);
@@ -30,7 +28,7 @@ namespace A10_Polymorphie {
 
 
         move(_timeslice: number): void {
-            console.log("move Snowflake");
+            // console.log("move Snowflake");
 
             let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
