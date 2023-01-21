@@ -8,16 +8,17 @@ var A11_BirdhouseAdvanced;
                  Quellen: <   >
                  */
     class Bird extends A11_BirdhouseAdvanced.Moveable {
+        target;
         color;
+        f = 0.1;
         constructor(_color) {
             super();
             this.color = _color;
         }
         moveFlying(_timeslice) {
             // console.log("move Bird");
-            let offset = new A11_BirdhouseAdvanced.Vector(this.velocity.x, this.velocity.y);
-            offset.scale(_timeslice);
-            this.position.add(offset);
+            this.position.x = this.position.x + this.f * (this.target.x - this.position.x);
+            this.position.y = this.position.y + this.f * (this.target.y - this.position.y);
             if (this.position.x < 0)
                 this.position.x += A11_BirdhouseAdvanced.crc2.canvas.width;
             if (this.position.y < 0)

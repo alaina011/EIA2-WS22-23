@@ -12,8 +12,9 @@ namespace A11_BirdhouseAdvanced {
     export class Bird extends Moveable {
 
 
-    
-       private color: string;
+        private target: Vector;
+        private color: string;
+        private f: number = 0.1;
 
         constructor(_color: string) {
 
@@ -23,12 +24,11 @@ namespace A11_BirdhouseAdvanced {
 
         }
 
-       public moveFlying(_timeslice: number): void {
+        public moveFlying(_timeslice: number): void {
             // console.log("move Bird");
 
-            let offset: Vector = new Vector(this.velocity.x, this.velocity.y);
-            offset.scale(_timeslice);
-            this.position.add(offset);
+            this.position.x = this.position.x + this.f * (this.target.x - this.position.x);
+            this.position.y = this.position.y + this.f * (this.target.y - this.position.y);
 
 
             if (this.position.x < 0)
@@ -47,7 +47,7 @@ namespace A11_BirdhouseAdvanced {
 
 
 
-       public drawFlying(): void {
+        public drawFlying(): void {
             // console.log("draw flying Bird");
 
             crc2.save();
